@@ -35,3 +35,21 @@ def search_books(book_list):
             print(f"{book['title']} by {book['author']} ({book['year']})")
     else:
         print("No matching books found.")
+
+def main():
+    book_list = load_books()
+
+    while True:
+        print("\nOptions are:\n1) Add Book\n2) List Books\n3) Search Books\n4) Quit")
+        choice = input("Choose an option: ")
+        if choice == "1":
+            add_book(book_list)
+        elif choice == "2":
+            list_books(book_list)
+        elif choice == "3":
+            search_books(book_list)
+        elif choice == "4":
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid option. Please try again.")
